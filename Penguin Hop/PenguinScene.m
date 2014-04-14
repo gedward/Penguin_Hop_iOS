@@ -34,9 +34,21 @@
 }
 
 - (SKSpriteNode *)newPenguin {
+    SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"penguin_run"];
+    SKTexture *p1 = [atlas textureNamed:@"penguin_run1.png"];
+    SKTexture *p2 = [atlas textureNamed:@"penguin_run2.png"];
+    SKTexture *p3 = [atlas textureNamed:@"penguin_run3.png"];
+    NSArray *penguinRunTextures = @[p1,p2,p3];
+    SKAction *runAnimation = [SKAction animateWithTextures:penguinRunTextures timePerFrame:.1];
+    
     SKSpriteNode *penguin = [SKSpriteNode spriteNodeWithImageNamed:@"penguin_idle"];
-    penguin.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:30];
-    penguin.physicsBody.dynamic = NO;
+    [penguin runAction:[SKAction repeatActionForever:runAnimation]];
+    
+//    penguin.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:30];
+//    penguin.physicsBody.dynamic = NO;
+    
+//    penguin.color = [SKColor redColor];
+//    penguin.colorBlendFactor = .5;
     
     SKAction *run_action = [SKAction moveByX:100 y:0 duration:1.0];
     [penguin runAction:[SKAction repeatActionForever:run_action]];

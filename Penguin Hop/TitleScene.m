@@ -57,11 +57,22 @@
         SKAction *remove = [SKAction removeFromParent];
         SKAction *moveSequence = [SKAction sequence:@[moveUp, zoom, pause, fadeAway, remove]];
         
-        [title_node runAction: moveSequence completion:^{
-            SKScene *penguinScene  = [[PenguinScene alloc] initWithSize:self.size];
-            SKTransition *doors = [SKTransition doorsOpenVerticalWithDuration:0.5];
-            [self.view presentScene:penguinScene transition:doors];
-        }];    }
+        [title_node runAction: moveSequence completion:^ {
+            
+            //          preloading textures
+            SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"penguin_run"];
+            SKTexture *p1 = [atlas textureNamed:@"penguin_run1.png"];
+            SKTexture *p2 = [atlas textureNamed:@"penguin_run2.png"];
+            SKTexture *p3 = [atlas textureNamed:@"penguin_run3.png"];
+            NSArray *penguinRunTextures = @[p1,p2,p3];
+            
+            [SKTexture preloadTextures:penguinRunTextures withCompletionHandler:^ {
+                SKScene *penguinScene  = [[PenguinScene alloc] initWithSize:self.size];
+                SKTransition *doors = [SKTransition doorsOpenVerticalWithDuration:0.5];
+                [self.view presentScene:penguinScene transition:doors];
+            }];
+        }];
+    }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
