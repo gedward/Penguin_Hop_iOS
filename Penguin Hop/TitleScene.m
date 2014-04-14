@@ -68,8 +68,8 @@
             
             [SKTexture preloadTextures:penguinRunTextures withCompletionHandler:^ {
                 SKScene *penguinScene  = [[PenguinScene alloc] initWithSize:self.size];
-                SKTransition *doors = [SKTransition doorsOpenVerticalWithDuration:0.5];
-                [self.view presentScene:penguinScene transition:doors];
+                SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionDown duration:.75];
+                [self.scene.view presentScene:penguinScene transition:reveal];
             }];
         }];
     }

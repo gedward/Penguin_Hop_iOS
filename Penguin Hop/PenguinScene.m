@@ -28,9 +28,26 @@
 - (void)createSceneContents {
     self.backgroundColor = [SKColor whiteColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
+    
+    SKSpriteNode *background = [self newBackground];
+    [self addChild:background];
+    
     SKSpriteNode *penguin = [self newPenguin];
-    penguin.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)-150);
+    penguin.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)/1.3);
     [self addChild:penguin];
+    
+    [penguin runAction:[SKAction repeatActionForever:[penguin.userData objectForKey:@"run_action"]]];
+    
+}
+
+- (SKSpriteNode *)newBackground {
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"penguinbackground.jpg"];
+    background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
+    
+    SKAction *move_left = [SKAction moveByX:-75 y:0 duration:1.0];
+    [background runAction:[SKAction repeatActionForever:move_left]];
+    
+    return background;
 }
 
 - (SKSpriteNode *)newPenguin {
@@ -42,7 +59,10 @@
     SKAction *runAnimation = [SKAction animateWithTextures:penguinRunTextures timePerFrame:.1];
     
     SKSpriteNode *penguin = [SKSpriteNode spriteNodeWithImageNamed:@"penguin_idle"];
-    [penguin runAction:[SKAction repeatActionForever:runAnimation]];
+    penguin.name = @"penguin";
+    penguin.userData = [NSMutableDictionary dictionary];
+    [penguin.userData setObject:runAnimation forKey:@"run_action"];
+
     
 //    penguin.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:30];
 //    penguin.physicsBody.dynamic = NO;
@@ -50,8 +70,8 @@
 //    penguin.color = [SKColor redColor];
 //    penguin.colorBlendFactor = .5;
     
-    SKAction *run_action = [SKAction moveByX:100 y:0 duration:1.0];
-    [penguin runAction:[SKAction repeatActionForever:run_action]];
+//    SKAction *run_action = [SKAction moveByX:150 y:0 duration:1.0];
+//    [penguin runAction:[SKAction repeatActionForever:run_action]];
     
     return penguin;
 }
