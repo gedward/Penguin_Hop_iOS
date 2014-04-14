@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Gerard Edward Gonzalez. All rights reserved.
 //
 
-#import "MyScene.h"
+#import "PenguinScene.h"
 
-@implementation MyScene
+@implementation PenguinScene
 
--(id)initWithSize:(CGSize)size {    
+-(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
     }
@@ -26,19 +26,22 @@
 }
 
 - (void)createSceneContents {
-    self.backgroundColor = [SKColor colorWithRed:0.05 green:0.05 blue:0.05 alpha:1.0];
-    [self addChild: [self newHelloNode]];
+    self.backgroundColor = [SKColor whiteColor];
+    self.scaleMode = SKSceneScaleModeAspectFit;
+    SKSpriteNode *penguin = [self newPenguin];
+    penguin.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)-150);
+    [self addChild:penguin];
 }
 
-- (SKLabelNode *)newHelloNode {
-    SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"MarkerFelt-Thin"];
+- (SKSpriteNode *)newPenguin {
+    SKSpriteNode *penguin = [SKSpriteNode spriteNodeWithImageNamed:@"penguin_idle"];
+    penguin.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:30];
+    penguin.physicsBody.dynamic = NO;
     
-    myLabel.text = @"Hello, Penguins!";
-    myLabel.fontSize = 30;
-    myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                   CGRectGetMidY(self.frame));
+    SKAction *run_action = [SKAction moveByX:100 y:0 duration:1.0];
+    [penguin runAction:[SKAction repeatActionForever:run_action]];
     
-    return myLabel;
+    return penguin;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
