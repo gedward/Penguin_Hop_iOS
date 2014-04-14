@@ -12,7 +12,8 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
+        NSLog(@"Size: %@", NSStringFromCGSize(size));
+        self.anchorPoint = CGPointMake (0.5,0.5);
     }
     return self;
 }
@@ -29,12 +30,19 @@
     self.backgroundColor = [SKColor whiteColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
     
+    SKNode *myWorld = [SKNode node];
+    [self addChild:myWorld];
+    
+    SKNode *camera = [SKNode node];
+    camera.name = @"camera";
+    [myWorld addChild:camera];
+    
     SKSpriteNode *background = [self newBackground];
-    [self addChild:background];
+    [myWorld addChild:background];
     
     SKSpriteNode *penguin = [self newPenguin];
-    penguin.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)/1.3);
-    [self addChild:penguin];
+//    penguin.position = CGPointMake(CGRectGetMidX(myWorld.frame),CGRectGetMidY(myWorld.frame));
+    [myWorld addChild:penguin];
     
     [penguin runAction:[SKAction repeatActionForever:[penguin.userData objectForKey:@"run_action"]]];
     
@@ -98,4 +106,21 @@
     /* Called before each frame is rendered */
 }
 
+- (void)didSimulatePhysics
+{
+    [self centerOnNode: [self childNodeWithName: @"//camera"]];
+}
+
+- (void) centerOnNode: (SKNode *) node
+{
+    CGPoint cameraPositionInScene = [node.scene convertPoint:node.position fromNode:node.parent];
+    node.parent.position = CGPointMake(node.parent.position.x - cameraPositionInScene.x, node.parent.position.y - cameraPositionInScene.y);
+}
+
 @end
+
+
+
+
+
+
