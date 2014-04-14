@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04F0E91918FB927000E6729F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0E91818FB927000E6729F /* Foundation.framework */; };
+		04F0E91B18FB927000E6729F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0E91A18FB927000E6729F /* CoreGraphics.framework */; };
+		04F0E91D18FB927000E6729F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0E91C18FB927000E6729F /* UIKit.framework */; };
+		04F0E91F18FB927000E6729F /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0E91E18FB927000E6729F /* SpriteKit.framework */; };
+		04F0E92518FB927000E6729F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F0E92318FB927000E6729F /* InfoPlist.strings */; };
+		04F0E92718FB927000E6729F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0E92618FB927000E6729F /* main.m */; };
+		04F0E92B18FB927000E6729F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0E92A18FB927000E6729F /* AppDelegate.m */; };
+		04F0E92E18FB927000E6729F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F0E92C18FB927000E6729F /* Main_iPhone.storyboard */; };
+		04F0E93118FB927000E6729F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F0E92F18FB927000E6729F /* Main_iPad.storyboard */; };
+		04F0E93418FB927000E6729F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0E93318FB927000E6729F /* ViewController.m */; };
+		04F0E93718FB927000E6729F /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0E93618FB927000E6729F /* MyScene.m */; };
+		04F0E93918FB927000E6729F /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F0E93818FB927000E6729F /* Spaceship.png */; };
+		04F0E93B18FB927000E6729F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F0E93A18FB927000E6729F /* Images.xcassets */; };
+		04F0E94218FB927000E6729F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0E94118FB927000E6729F /* XCTest.framework */; };
+		04F0E94318FB927000E6729F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0E91818FB927000E6729F /* Foundation.framework */; };
+		04F0E94418FB927000E6729F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0E91C18FB927000E6729F /* UIKit.framework */; };
+		04F0E94C18FB927000E6729F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F0E94A18FB927000E6729F /* InfoPlist.strings */; };
+		04F0E94E18FB927000E6729F /* Penguin_HopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0E94D18FB927000E6729F /* Penguin_HopTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04F0E94518FB927000E6729F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04F0E90D18FB926F00E6729F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F0E91418FB926F00E6729F;
+			remoteInfo = "Penguin Hop";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04F0E91518FB927000E6729F /* Penguin Hop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penguin Hop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F0E91818FB927000E6729F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		04F0E91A18FB927000E6729F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		04F0E91C18FB927000E6729F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		04F0E91E18FB927000E6729F /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		04F0E92218FB927000E6729F /* Penguin Hop-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Penguin Hop-Info.plist"; sourceTree = "<group>"; };
+		04F0E92418FB927000E6729F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04F0E92618FB927000E6729F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04F0E92818FB927000E6729F /* Penguin Hop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Penguin Hop-Prefix.pch"; sourceTree = "<group>"; };
+		04F0E92918FB927000E6729F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04F0E92A18FB927000E6729F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04F0E92D18FB927000E6729F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		04F0E93018FB927000E6729F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		04F0E93218FB927000E6729F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		04F0E93318FB927000E6729F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04F0E93518FB927000E6729F /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		04F0E93618FB927000E6729F /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		04F0E93818FB927000E6729F /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		04F0E93A18FB927000E6729F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		04F0E94018FB927000E6729F /* Penguin HopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Penguin HopTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F0E94118FB927000E6729F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		04F0E94918FB927000E6729F /* Penguin HopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Penguin HopTests-Info.plist"; sourceTree = "<group>"; };
+		04F0E94B18FB927000E6729F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04F0E94D18FB927000E6729F /* Penguin_HopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Penguin_HopTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04F0E91218FB926F00E6729F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F0E91B18FB927000E6729F /* CoreGraphics.framework in Frameworks */,
+				04F0E91D18FB927000E6729F /* UIKit.framework in Frameworks */,
+				04F0E91F18FB927000E6729F /* SpriteKit.framework in Frameworks */,
+				04F0E91918FB927000E6729F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F0E93D18FB927000E6729F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F0E94218FB927000E6729F /* XCTest.framework in Frameworks */,
+				04F0E94418FB927000E6729F /* UIKit.framework in Frameworks */,
+				04F0E94318FB927000E6729F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04F0E90C18FB926F00E6729F = {
+			isa = PBXGroup;
+			children = (
+				04F0E92018FB927000E6729F /* Penguin Hop */,
+				04F0E94718FB927000E6729F /* Penguin HopTests */,
+				04F0E91718FB927000E6729F /* Frameworks */,
+				04F0E91618FB927000E6729F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04F0E91618FB927000E6729F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04F0E91518FB927000E6729F /* Penguin Hop.app */,
+				04F0E94018FB927000E6729F /* Penguin HopTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04F0E91718FB927000E6729F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04F0E91818FB927000E6729F /* Foundation.framework */,
+				04F0E91A18FB927000E6729F /* CoreGraphics.framework */,
+				04F0E91C18FB927000E6729F /* UIKit.framework */,
+				04F0E91E18FB927000E6729F /* SpriteKit.framework */,
+				04F0E94118FB927000E6729F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04F0E92018FB927000E6729F /* Penguin Hop */ = {
+			isa = PBXGroup;
+			children = (
+				04F0E92918FB927000E6729F /* AppDelegate.h */,
+				04F0E92A18FB927000E6729F /* AppDelegate.m */,
+				04F0E92C18FB927000E6729F /* Main_iPhone.storyboard */,
+				04F0E92F18FB927000E6729F /* Main_iPad.storyboard */,
+				04F0E93218FB927000E6729F /* ViewController.h */,
+				04F0E93318FB927000E6729F /* ViewController.m */,
+				04F0E93518FB927000E6729F /* MyScene.h */,
+				04F0E93618FB927000E6729F /* MyScene.m */,
+				04F0E93818FB927000E6729F /* Spaceship.png */,
+				04F0E93A18FB927000E6729F /* Images.xcassets */,
+				04F0E92118FB927000E6729F /* Supporting Files */,
+			);
+			path = "Penguin Hop";
+			sourceTree = "<group>";
+		};
+		04F0E92118FB927000E6729F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04F0E92218FB927000E6729F /* Penguin Hop-Info.plist */,
+				04F0E92318FB927000E6729F /* InfoPlist.strings */,
+				04F0E92618FB927000E6729F /* main.m */,
+				04F0E92818FB927000E6729F /* Penguin Hop-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04F0E94718FB927000E6729F /* Penguin HopTests */ = {
+			isa = PBXGroup;
+			children = (
+				04F0E94D18FB927000E6729F /* Penguin_HopTests.m */,
+				04F0E94818FB927000E6729F /* Supporting Files */,
+			);
+			path = "Penguin HopTests";
+			sourceTree = "<group>";
+		};
+		04F0E94818FB927000E6729F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04F0E94918FB927000E6729F /* Penguin HopTests-Info.plist */,
+				04F0E94A18FB927000E6729F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04F0E91418FB926F00E6729F /* Penguin Hop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F0E95118FB927000E6729F /* Build configuration list for PBXNativeTarget "Penguin Hop" */;
+			buildPhases = (
+				04F0E91118FB926F00E6729F /* Sources */,
+				04F0E91218FB926F00E6729F /* Frameworks */,
+				04F0E91318FB926F00E6729F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Penguin Hop";
+			productName = "Penguin Hop";
+			productReference = 04F0E91518FB927000E6729F /* Penguin Hop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04F0E93F18FB927000E6729F /* Penguin HopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F0E95418FB927000E6729F /* Build configuration list for PBXNativeTarget "Penguin HopTests" */;
+			buildPhases = (
+				04F0E93C18FB927000E6729F /* Sources */,
+				04F0E93D18FB927000E6729F /* Frameworks */,
+				04F0E93E18FB927000E6729F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04F0E94618FB927000E6729F /* PBXTargetDependency */,
+			);
+			name = "Penguin HopTests";
+			productName = "Penguin HopTests";
+			productReference = 04F0E94018FB927000E6729F /* Penguin HopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04F0E90D18FB926F00E6729F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Gerard Edward Gonzalez";
+				TargetAttributes = {
+					04F0E93F18FB927000E6729F = {
+						TestTargetID = 04F0E91418FB926F00E6729F;
+					};
+				};
+			};
+			buildConfigurationList = 04F0E91018FB926F00E6729F /* Build configuration list for PBXProject "Penguin Hop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04F0E90C18FB926F00E6729F;
+			productRefGroup = 04F0E91618FB927000E6729F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04F0E91418FB926F00E6729F /* Penguin Hop */,
+				04F0E93F18FB927000E6729F /* Penguin HopTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04F0E91318FB926F00E6729F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F0E93918FB927000E6729F /* Spaceship.png in Resources */,
+				04F0E93B18FB927000E6729F /* Images.xcassets in Resources */,
+				04F0E93118FB927000E6729F /* Main_iPad.storyboard in Resources */,
+				04F0E92E18FB927000E6729F /* Main_iPhone.storyboard in Resources */,
+				04F0E92518FB927000E6729F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F0E93E18FB927000E6729F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F0E94C18FB927000E6729F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04F0E91118FB926F00E6729F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F0E93718FB927000E6729F /* MyScene.m in Sources */,
+				04F0E93418FB927000E6729F /* ViewController.m in Sources */,
+				04F0E92B18FB927000E6729F /* AppDelegate.m in Sources */,
+				04F0E92718FB927000E6729F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F0E93C18FB927000E6729F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F0E94E18FB927000E6729F /* Penguin_HopTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04F0E94618FB927000E6729F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04F0E91418FB926F00E6729F /* Penguin Hop */;
+			targetProxy = 04F0E94518FB927000E6729F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04F0E92318FB927000E6729F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F0E92418FB927000E6729F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		04F0E92C18FB927000E6729F /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F0E92D18FB927000E6729F /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		04F0E92F18FB927000E6729F /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F0E93018FB927000E6729F /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		04F0E94A18FB927000E6729F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F0E94B18FB927000E6729F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04F0E94F18FB927000E6729F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04F0E95018FB927000E6729F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04F0E95218FB927000E6729F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Penguin Hop/Penguin Hop-Prefix.pch";
+				INFOPLIST_FILE = "Penguin Hop/Penguin Hop-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		04F0E95318FB927000E6729F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Penguin Hop/Penguin Hop-Prefix.pch";
+				INFOPLIST_FILE = "Penguin Hop/Penguin Hop-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		04F0E95518FB927000E6729F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Penguin Hop.app/Penguin Hop";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Penguin Hop/Penguin Hop-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Penguin HopTests/Penguin HopTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		04F0E95618FB927000E6729F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Penguin Hop.app/Penguin Hop";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Penguin Hop/Penguin Hop-Prefix.pch";
+				INFOPLIST_FILE = "Penguin HopTests/Penguin HopTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04F0E91018FB926F00E6729F /* Build configuration list for PBXProject "Penguin Hop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F0E94F18FB927000E6729F /* Debug */,
+				04F0E95018FB927000E6729F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F0E95118FB927000E6729F /* Build configuration list for PBXNativeTarget "Penguin Hop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F0E95218FB927000E6729F /* Debug */,
+				04F0E95318FB927000E6729F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		04F0E95418FB927000E6729F /* Build configuration list for PBXNativeTarget "Penguin HopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F0E95518FB927000E6729F /* Debug */,
+				04F0E95618FB927000E6729F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04F0E90D18FB926F00E6729F /* Project object */;
+}
