@@ -27,6 +27,7 @@ NSTimeInterval _dt;
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         NSLog(@"Size: %@", NSStringFromCGSize(size));
+        self.scaleMode = SKSceneScaleModeAspectFill;
     }
     return self;
 }
@@ -41,7 +42,6 @@ NSTimeInterval _dt;
 
 - (void)createSceneContents {
     self.backgroundColor = [SKColor whiteColor];
-    self.scaleMode = SKSceneScaleModeAspectFit;
     [self initalizingScrollingBackground];
     
     self.penguin = [self newPenguin];
