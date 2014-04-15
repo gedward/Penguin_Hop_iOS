@@ -18,16 +18,17 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
     return CGPointMake(a.x * b, a.y * b);
 }
 
-static const float BG_VELOCITY = 100.0;
+static const float BG_VELOCITY = 150.0;
 NSTimeInterval _lastUpdateTime;
 NSTimeInterval _dt;
+float floor_position;
 
 @implementation PenguinScene
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         NSLog(@"Size: %@", NSStringFromCGSize(size));
-        self.scaleMode = SKSceneScaleModeAspectFill;
+        floor_position = CGRectGetMidY(self.frame)/1.8;;
     }
     return self;
 }
@@ -35,6 +36,15 @@ NSTimeInterval _dt;
 - (void)didMoveToView: (SKView *) view {
     if (!self.contentCreated)
     {
+        self.view.userInteractionEnabled = NO;
+
+        self.swipeDownGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipeDown)];
+        [self.swipeDownGesture setDirection: UISwipeGestureRecognizerDirectionDown];
+        [view addGestureRecognizer: self.swipeDownGesture];
+        
+        self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
+        [view addGestureRecognizer:self.tapGesture];
+        
         [self createSceneContents];
         self.contentCreated = YES;
     }
@@ -42,13 +52,41 @@ NSTimeInterval _dt;
 
 - (void)createSceneContents {
     self.backgroundColor = [SKColor whiteColor];
+    self.scaleMode = SKSceneScaleModeAspectFit;
+    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(self.frame.origin.x, floor_position, self.frame.size.width, self.frame.size.height)];
+
     [self initalizingScrollingBackground];
-    
+
     self.penguin = [self newPenguin];
-    self.penguin.position = CGPointMake(CGRectGetMidX(self.frame)/2,CGRectGetMidY(self.frame)/1.8);
+    self.penguin.position = CGPointMake(CGRectGetMidX(self.frame)/2,floor_position);
     [self addChild:self.penguin];
     
+    [self initializeStartLabel];
+    
     [self.penguin runAction:[SKAction repeatActionForever:[self.penguin.userData objectForKey:@"run_action"]]];
+}
+
+#pragma mark - Background Methods
+
+-(void)initializeStartLabel {
+    SKLabelNode *startNode = [SKLabelNode labelNodeWithFontNamed:@"MarkerFelt-Thin"];
+    
+    startNode.text = @"Start!";
+    startNode.fontSize = 75;
+    startNode.position = CGPointMake(CGRectGetMidX(self.frame),
+                                   CGRectGetMidY(self.frame));
+    startNode.color = [SKColor blueColor];
+    startNode.colorBlendFactor = .75;
+    [self addChild:startNode];
+    
+    SKAction *pause = [SKAction waitForDuration: 1.0];
+    SKAction *fadeAway = [SKAction fadeOutWithDuration: 0.25];
+    SKAction *remove = [SKAction removeFromParent];
+    SKAction *startSequence = [SKAction sequence:@[pause, fadeAway, remove]];
+    
+    [startNode runAction:startSequence completion:^ {
+        self.view.userInteractionEnabled = YES;
+    }];
 }
 
 -(void)initalizingScrollingBackground
@@ -80,60 +118,69 @@ NSTimeInterval _dt;
      }];
 }
 
+#pragma mark - Penguin Methods
+
 - (SKSpriteNode *)newPenguin {
-    SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"penguin_run"];
-    SKTexture *p1 = [atlas textureNamed:@"penguin_run1.png"];
-    SKTexture *p2 = [atlas textureNamed:@"penguin_run2.png"];
-    SKTexture *p3 = [atlas textureNamed:@"penguin_run3.png"];
-    NSArray *penguinRunTextures = @[p1,p2,p3];
+    SKTextureAtlas *run_atlas = [SKTextureAtlas atlasNamed:@"penguin_run"];
+    SKTexture *pr1 = [run_atlas textureNamed:@"penguin_run1.png"];
+    SKTexture *pr2 = [run_atlas textureNamed:@"penguin_run2.png"];
+    SKTexture *pr3 = [run_atlas textureNamed:@"penguin_run3.png"];
+    NSArray *penguinRunTextures = @[pr1,pr2,pr3];
     SKAction *runAnimation = [SKAction animateWithTextures:penguinRunTextures timePerFrame:.1];
     
+    SKTextureAtlas *slide_atlas = [SKTextureAtlas atlasNamed:@"penguin_slide"];
+    SKTexture *ps1 = [slide_atlas textureNamed:@"penguin_slide1.png"];
+    SKTexture *ps2 = [slide_atlas textureNamed:@"penguin_slide2.png"];
+    NSArray *penguinSlideTextures = @[ps1,ps2];
+    SKAction *slideAnimation = [SKAction animateWithTextures:penguinSlideTextures timePerFrame:.3];
+    SKAction *leanForward = [SKAction rotateByAngle:-.1 duration:.05];
+    SKAction *leanBackward = [SKAction rotateByAngle:.1 duration:.05];
+    SKAction *slideSequence = [SKAction sequence:@[leanForward, slideAnimation, leanBackward]];
+    
+    SKAction *jump = [SKAction moveByX:0 y:200 duration:.3];
+
     SKSpriteNode *penguin = [SKSpriteNode spriteNodeWithImageNamed:@"penguin_idle"];
     penguin.name = @"penguin";
     penguin.userData = [NSMutableDictionary dictionary];
     [penguin.userData setObject:runAnimation forKey:@"run_action"];
+    [penguin.userData setObject:slideSequence forKey:@"slide_action"];
+    [penguin.userData setObject:jump forKey:@"jump_action"];
 
-    
-//    penguin.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:30];
-//    penguin.physicsBody.dynamic = NO;
-    
-//    penguin.color = [SKColor redColor];
-//    penguin.colorBlendFactor = .5;
-    
-//    SKAction *run_action = [SKAction moveByX:150 y:0 duration:1.0];
-//    [penguin runAction:[SKAction repeatActionForever:run_action]];
+    penguin.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:penguin.size.width/2];
+    penguin.physicsBody.dynamic = YES;
     
     return penguin;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-    
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"penguin_idle"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
+#pragma mark - Gameplay Methods
+
+#pragma mark Gestures
+
+-(void)didSwipeDown {
+    if(self.penguin) {
+        [self.penguin runAction:[self.penguin.userData objectForKey:@"slide_action"]];
+    }
+}
+
+-(void)didTap {
+    if(self.penguin) {
+        [self.penguin runAction:[self.penguin.userData objectForKey:@"jump_action"]];
     }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
-    if (_lastUpdateTime)
-        _dt = currentTime - _lastUpdateTime;
-    else
-        _dt = 0;
+    //update time interval for background
+    _dt = (_lastUpdateTime) ? (currentTime - _lastUpdateTime) : 0;
     _lastUpdateTime = currentTime;
-    
     [self moveBg];
 }
 
+#pragma mark - dealloc 
+
+- (void)willMoveFromView: (SKView *)view {
+    [view removeGestureRecognizer:self.swipeDownGesture];
+    [view removeGestureRecognizer:self.tapGesture];
+}
 
 @end
 

@@ -68,7 +68,6 @@
             
             [SKTexture preloadTextures:penguinRunTextures withCompletionHandler:^ {
                 SKScene *penguinScene  = [[PenguinScene alloc] initWithSize:self.size];
-                penguinScene.scaleMode = SKSceneScaleModeAspectFill;
                 SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionDown duration:.75];
                 [self.scene.view presentScene:penguinScene transition:reveal];
             }];

@@ -12,9 +12,8 @@
 		04D0153F18FCD343003046DA /* penguinjump1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D0153C18FCD343003046DA /* penguinjump1.png */; };
 		04D0154018FCD343003046DA /* penguinbackground2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04D0153D18FCD343003046DA /* penguinbackground2x.jpg */; };
 		04D0154118FCD343003046DA /* penguinjump2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D0153E18FCD343003046DA /* penguinjump2.png */; };
+		04D0154318FCDC74003046DA /* penguin_slide.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 04D0154218FCDC74003046DA /* penguin_slide.atlas */; };
 		04DAB7C218FC580500E1A902 /* penguin_idle.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAB7BC18FC580500E1A902 /* penguin_idle.png */; };
-		04DAB7C418FC580500E1A902 /* penguin_slide1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAB7BE18FC580500E1A902 /* penguin_slide1.png */; };
-		04DAB7C518FC580500E1A902 /* penguin_slide2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAB7BF18FC580500E1A902 /* penguin_slide2.png */; };
 		04DAB7CF18FC5A9B00E1A902 /* penguin_run.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 04DAB7CE18FC5A9B00E1A902 /* penguin_run.atlas */; };
 		04F0E91918FB927000E6729F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0E91818FB927000E6729F /* Foundation.framework */; };
 		04F0E91B18FB927000E6729F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0E91A18FB927000E6729F /* CoreGraphics.framework */; };
@@ -53,9 +52,8 @@
 		04D0153C18FCD343003046DA /* penguinjump1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguinjump1.png; sourceTree = "<group>"; };
 		04D0153D18FCD343003046DA /* penguinbackground2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = penguinbackground2x.jpg; sourceTree = "<group>"; };
 		04D0153E18FCD343003046DA /* penguinjump2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguinjump2.png; sourceTree = "<group>"; };
+		04D0154218FCDC74003046DA /* penguin_slide.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = penguin_slide.atlas; sourceTree = "<group>"; };
 		04DAB7BC18FC580500E1A902 /* penguin_idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguin_idle.png; sourceTree = "<group>"; };
-		04DAB7BE18FC580500E1A902 /* penguin_slide1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguin_slide1.png; sourceTree = "<group>"; };
-		04DAB7BF18FC580500E1A902 /* penguin_slide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguin_slide2.png; sourceTree = "<group>"; };
 		04DAB7CE18FC5A9B00E1A902 /* penguin_run.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = penguin_run.atlas; sourceTree = "<group>"; };
 		04F0E91518FB927000E6729F /* Penguin Hop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penguin Hop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F0E91818FB927000E6729F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -136,8 +134,6 @@
 				04D0153C18FCD343003046DA /* penguinjump1.png */,
 				04D0153E18FCD343003046DA /* penguinjump2.png */,
 				04DAB7BC18FC580500E1A902 /* penguin_idle.png */,
-				04DAB7BE18FC580500E1A902 /* penguin_slide1.png */,
-				04DAB7BF18FC580500E1A902 /* penguin_slide2.png */,
 			);
 			name = "Penguin Images";
 			sourceTree = "<group>";
@@ -183,6 +179,7 @@
 				04F0E92C18FB927000E6729F /* Main_iPhone.storyboard */,
 				04F0E92F18FB927000E6729F /* Main_iPad.storyboard */,
 				04F0E93818FB927000E6729F /* Spaceship.png */,
+				04D0154218FCDC74003046DA /* penguin_slide.atlas */,
 				04DAB7CE18FC5A9B00E1A902 /* penguin_run.atlas */,
 				04F0E93A18FB927000E6729F /* Images.xcassets */,
 				04DAB7BB18FC57E600E1A902 /* Penguin Images */,
@@ -302,10 +299,9 @@
 				04F0E93118FB927000E6729F /* Main_iPad.storyboard in Resources */,
 				04D0154118FCD343003046DA /* penguinjump2.png in Resources */,
 				04D0154018FCD343003046DA /* penguinbackground2x.jpg in Resources */,
-				04DAB7C418FC580500E1A902 /* penguin_slide1.png in Resources */,
 				04F0E92E18FB927000E6729F /* Main_iPhone.storyboard in Resources */,
-				04DAB7C518FC580500E1A902 /* penguin_slide2.png in Resources */,
 				04D0153F18FCD343003046DA /* penguinjump1.png in Resources */,
+				04D0154318FCDC74003046DA /* penguin_slide.atlas in Resources */,
 				04DAB7CF18FC5A9B00E1A902 /* penguin_run.atlas in Resources */,
 				0428E3E718FCC8DF00C27571 /* penguinbackground.jpg in Resources */,
 				04F0E92518FB927000E6729F /* InfoPlist.strings in Resources */,

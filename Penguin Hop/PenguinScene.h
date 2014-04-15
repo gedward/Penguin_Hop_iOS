@@ -8,9 +8,12 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface PenguinScene : SKScene
+@interface PenguinScene : SKScene <UIGestureRecognizerDelegate>
 
 @property BOOL contentCreated;
 @property (retain) SKSpriteNode *penguin;
+
+@property (retain) UISwipeGestureRecognizer *swipeDownGesture;
+@property (retain) UITapGestureRecognizer *tapGesture; 
 
 @end
