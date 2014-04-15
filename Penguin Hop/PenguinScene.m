@@ -8,12 +8,25 @@
 
 #import "PenguinScene.h"
 
+static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
+{
+    return CGPointMake(a.x + b.x, a.y + b.y);
+}
+
+static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
+{
+    return CGPointMake(a.x * b, a.y * b);
+}
+
+static const float BG_VELOCITY = 100.0;
+NSTimeInterval _lastUpdateTime;
+NSTimeInterval _dt;
+
 @implementation PenguinScene
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         NSLog(@"Size: %@", NSStringFromCGSize(size));
-        self.anchorPoint = CGPointMake (0.5,0.5);
     }
     return self;
 }
@@ -29,33 +42,42 @@
 - (void)createSceneContents {
     self.backgroundColor = [SKColor whiteColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
+    [self initalizingScrollingBackground];
     
-    SKNode *myWorld = [SKNode node];
-    [self addChild:myWorld];
+    self.penguin = [self newPenguin];
+    self.penguin.position = CGPointMake(CGRectGetMidX(self.frame)/2,CGRectGetMidY(self.frame)/1.8);
+    [self addChild:self.penguin];
     
-    SKNode *camera = [SKNode node];
-    camera.name = @"camera";
-    [myWorld addChild:camera];
-    
-    SKSpriteNode *background = [self newBackground];
-    [myWorld addChild:background];
-    
-    SKSpriteNode *penguin = [self newPenguin];
-//    penguin.position = CGPointMake(CGRectGetMidX(myWorld.frame),CGRectGetMidY(myWorld.frame));
-    [myWorld addChild:penguin];
-    
-    [penguin runAction:[SKAction repeatActionForever:[penguin.userData objectForKey:@"run_action"]]];
-    
+    [self.penguin runAction:[SKAction repeatActionForever:[self.penguin.userData objectForKey:@"run_action"]]];
 }
 
-- (SKSpriteNode *)newBackground {
-    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"penguinbackground.jpg"];
-    background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
-    
-    SKAction *move_left = [SKAction moveByX:-75 y:0 duration:1.0];
-    [background runAction:[SKAction repeatActionForever:move_left]];
-    
-    return background;
+-(void)initalizingScrollingBackground
+{
+    for (int i = 0; i < 2; i++) {
+        SKSpriteNode *bg = [SKSpriteNode spriteNodeWithImageNamed:@"penguinbackground.jpg"];
+        bg.position = CGPointMake(i * bg.size.width, 0);
+        bg.anchorPoint = CGPointZero;
+        bg.name = @"bg";
+        [self addChild:bg];
+    }
+}
+
+- (void)moveBg
+{
+    [self enumerateChildNodesWithName:@"bg" usingBlock: ^(SKNode *node, BOOL *stop)
+     {
+         SKSpriteNode * bg = (SKSpriteNode *) node;
+         CGPoint bgVelocity = CGPointMake(-BG_VELOCITY, 0);
+         CGPoint amtToMove = CGPointMultiplyScalar(bgVelocity,_dt);
+         bg.position = CGPointAdd(bg.position, amtToMove);
+         
+         //Checks if bg node is completely scrolled of the screen, if yes then put it at the end of the other node
+         if (bg.position.x <= -bg.size.width)
+         {
+             bg.position = CGPointMake(bg.position.x + bg.size.width*2,
+                                       bg.position.y);
+         }
+     }];
 }
 
 - (SKSpriteNode *)newPenguin {
@@ -103,19 +125,15 @@
 }
 
 -(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
+    if (_lastUpdateTime)
+        _dt = currentTime - _lastUpdateTime;
+    else
+        _dt = 0;
+    _lastUpdateTime = currentTime;
+    
+    [self moveBg];
 }
 
-- (void)didSimulatePhysics
-{
-    [self centerOnNode: [self childNodeWithName: @"//camera"]];
-}
-
-- (void) centerOnNode: (SKNode *) node
-{
-    CGPoint cameraPositionInScene = [node.scene convertPoint:node.position fromNode:node.parent];
-    node.parent.position = CGPointMake(node.parent.position.x - cameraPositionInScene.x, node.parent.position.y - cameraPositionInScene.y);
-}
 
 @end
 

@@ -11,5 +11,6 @@
 @interface PenguinScene : SKScene
 
 @property BOOL contentCreated;
+@property (retain) SKSpriteNode *penguin;
 
 @end

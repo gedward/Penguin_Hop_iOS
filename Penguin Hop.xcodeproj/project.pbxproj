@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0428E3DB18FC8BE700C27571 /* penguinbackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0428E3DA18FC8BE700C27571 /* penguinbackground.jpg */; };
+		0428E3E718FCC8DF00C27571 /* penguinbackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0428E3E518FCC8DF00C27571 /* penguinbackground.jpg */; };
 		04CE630018FBC7A0001F47AD /* TitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CE62FF18FBC7A0001F47AD /* TitleScene.m */; };
 		04DAB7C218FC580500E1A902 /* penguin_idle.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAB7BC18FC580500E1A902 /* penguin_idle.png */; };
 		04DAB7C418FC580500E1A902 /* penguin_slide1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAB7BE18FC580500E1A902 /* penguin_slide1.png */; };
@@ -44,7 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0428E3DA18FC8BE700C27571 /* penguinbackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = penguinbackground.jpg; sourceTree = "<group>"; };
+		0428E3E518FCC8DF00C27571 /* penguinbackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = penguinbackground.jpg; sourceTree = "<group>"; };
 		04CE62FE18FBC7A0001F47AD /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
 		04CE62FF18FBC7A0001F47AD /* TitleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleScene.m; sourceTree = "<group>"; };
 		04DAB7BC18FC580500E1A902 /* penguin_idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguin_idle.png; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		04DAB7BB18FC57E600E1A902 /* Penguin Images */ = {
 			isa = PBXGroup;
 			children = (
-				0428E3DA18FC8BE700C27571 /* penguinbackground.jpg */,
+				0428E3E518FCC8DF00C27571 /* penguinbackground.jpg */,
 				04DAB7BC18FC580500E1A902 /* penguin_idle.png */,
 				04DAB7BE18FC580500E1A902 /* penguin_slide1.png */,
 				04DAB7BF18FC580500E1A902 /* penguin_slide2.png */,
@@ -289,13 +289,13 @@
 			files = (
 				04F0E93918FB927000E6729F /* Spaceship.png in Resources */,
 				04F0E93B18FB927000E6729F /* Images.xcassets in Resources */,
-				0428E3DB18FC8BE700C27571 /* penguinbackground.jpg in Resources */,
 				04DAB7C218FC580500E1A902 /* penguin_idle.png in Resources */,
 				04F0E93118FB927000E6729F /* Main_iPad.storyboard in Resources */,
 				04DAB7C418FC580500E1A902 /* penguin_slide1.png in Resources */,
 				04F0E92E18FB927000E6729F /* Main_iPhone.storyboard in Resources */,
 				04DAB7C518FC580500E1A902 /* penguin_slide2.png in Resources */,
 				04DAB7CF18FC5A9B00E1A902 /* penguin_run.atlas in Resources */,
+				0428E3E718FCC8DF00C27571 /* penguinbackground.jpg in Resources */,
 				04F0E92518FB927000E6729F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
