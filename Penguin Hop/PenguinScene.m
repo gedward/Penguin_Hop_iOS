@@ -54,12 +54,11 @@ float floor_position;
     self.backgroundColor = [SKColor whiteColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
     
-//    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
     self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(self.frame.origin.x, floor_position, self.frame.size.width, self.frame.size.height-floor_position)];
 
     [self initalizingScrollingBackground];
 
-    self.penguin = [self newPenguin];
+    self.penguin = [[PenguinSprite alloc] init];
     self.penguin.position = CGPointMake(CGRectGetMidX(self.frame)/2,floor_position);
     [self addChild:self.penguin];
     
@@ -120,40 +119,6 @@ float floor_position;
      }];
 }
 
-#pragma mark - Penguin Methods
-
-- (SKSpriteNode *)newPenguin {
-    SKTextureAtlas *run_atlas = [SKTextureAtlas atlasNamed:@"penguin_run"];
-    SKTexture *pr1 = [run_atlas textureNamed:@"penguin_run1.png"];
-    SKTexture *pr2 = [run_atlas textureNamed:@"penguin_run2.png"];
-    SKTexture *pr3 = [run_atlas textureNamed:@"penguin_run3.png"];
-    NSArray *penguinRunTextures = @[pr1,pr2,pr3];
-    SKAction *runAnimation = [SKAction animateWithTextures:penguinRunTextures timePerFrame:.1];
-    
-    SKTextureAtlas *slide_atlas = [SKTextureAtlas atlasNamed:@"penguin_slide"];
-    SKTexture *ps1 = [slide_atlas textureNamed:@"penguin_slide1.png"];
-    SKTexture *ps2 = [slide_atlas textureNamed:@"penguin_slide2.png"];
-    NSArray *penguinSlideTextures = @[ps1,ps2];
-    SKAction *slideAnimation = [SKAction animateWithTextures:penguinSlideTextures timePerFrame:.3];
-    SKAction *leanForward = [SKAction rotateByAngle:-.1 duration:.05];
-    SKAction *leanBackward = [SKAction rotateByAngle:.1 duration:.05];
-    SKAction *slideSequence = [SKAction sequence:@[leanForward, slideAnimation, leanBackward]];
-    
-    SKAction *jump = [SKAction moveByX:0 y:200 duration:.3];
-
-    SKSpriteNode *penguin = [SKSpriteNode spriteNodeWithImageNamed:@"penguin_idle"];
-    penguin.name = @"penguin";
-    penguin.userData = [NSMutableDictionary dictionary];
-    [penguin.userData setObject:runAnimation forKey:@"run_action"];
-    [penguin.userData setObject:slideSequence forKey:@"slide_action"];
-    [penguin.userData setObject:jump forKey:@"jump_action"];
-
-    penguin.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:penguin.size.width/2];
-    penguin.physicsBody.dynamic = YES;
-    
-    return penguin;
-}
-
 #pragma mark - Gameplay Methods
 
 #pragma mark Gestures
@@ -166,7 +131,10 @@ float floor_position;
 
 -(void)didTap {
     if(self.penguin) {
-        [self.penguin runAction:[self.penguin.userData objectForKey:@"jump_action"]];
+        [self.penguin runAction:[self.penguin.userData objectForKey:@"jump_action"] completion: ^{
+            [self.penguin didJump];
+            NSLog(@"Jumps: %tu", [self.penguin getJumps]);
+        }];
     }
 }
 

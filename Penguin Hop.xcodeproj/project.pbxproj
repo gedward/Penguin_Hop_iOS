@@ -15,6 +15,7 @@
 		04D0154318FCDC74003046DA /* penguin_slide.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 04D0154218FCDC74003046DA /* penguin_slide.atlas */; };
 		04DAB7C218FC580500E1A902 /* penguin_idle.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAB7BC18FC580500E1A902 /* penguin_idle.png */; };
 		04DAB7CF18FC5A9B00E1A902 /* penguin_run.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 04DAB7CE18FC5A9B00E1A902 /* penguin_run.atlas */; };
+		04DDB14118FF0592000D663F /* PenguinSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DDB14018FF0592000D663F /* PenguinSprite.m */; };
 		04F0E91918FB927000E6729F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0E91818FB927000E6729F /* Foundation.framework */; };
 		04F0E91B18FB927000E6729F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0E91A18FB927000E6729F /* CoreGraphics.framework */; };
 		04F0E91D18FB927000E6729F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F0E91C18FB927000E6729F /* UIKit.framework */; };
@@ -55,6 +56,8 @@
 		04D0154218FCDC74003046DA /* penguin_slide.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = penguin_slide.atlas; sourceTree = "<group>"; };
 		04DAB7BC18FC580500E1A902 /* penguin_idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguin_idle.png; sourceTree = "<group>"; };
 		04DAB7CE18FC5A9B00E1A902 /* penguin_run.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = penguin_run.atlas; sourceTree = "<group>"; };
+		04DDB13F18FF0592000D663F /* PenguinSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenguinSprite.h; sourceTree = "<group>"; };
+		04DDB14018FF0592000D663F /* PenguinSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PenguinSprite.m; sourceTree = "<group>"; };
 		04F0E91518FB927000E6729F /* Penguin Hop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penguin Hop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F0E91818FB927000E6729F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		04F0E91A18FB927000E6729F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,6 +141,15 @@
 			name = "Penguin Images";
 			sourceTree = "<group>";
 		};
+		04DDB13E18FEFFDF000D663F /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				04DDB13F18FF0592000D663F /* PenguinSprite.h */,
+				04DDB14018FF0592000D663F /* PenguinSprite.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
 		04F0E90C18FB926F00E6729F = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				04CE62FC18FBC760001F47AD /* Scenes */,
+				04DDB13E18FEFFDF000D663F /* Objects */,
 				04CE62FD18FBC774001F47AD /* View Controllers */,
 				04F0E92918FB927000E6729F /* AppDelegate.h */,
 				04F0E92A18FB927000E6729F /* AppDelegate.m */,
@@ -328,6 +341,7 @@
 			files = (
 				04CE630018FBC7A0001F47AD /* TitleScene.m in Sources */,
 				04F0E93718FB927000E6729F /* PenguinScene.m in Sources */,
+				04DDB14118FF0592000D663F /* PenguinSprite.m in Sources */,
 				04F0E93418FB927000E6729F /* ViewController.m in Sources */,
 				04F0E92B18FB927000E6729F /* AppDelegate.m in Sources */,
 				04F0E92718FB927000E6729F /* main.m in Sources */,
@@ -470,9 +484,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Penguin Hop/Penguin Hop-Prefix.pch";
 				INFOPLIST_FILE = "Penguin Hop/Penguin Hop-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -487,9 +503,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Penguin Hop/Penguin Hop-Prefix.pch";
 				INFOPLIST_FILE = "Penguin Hop/Penguin Hop-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
