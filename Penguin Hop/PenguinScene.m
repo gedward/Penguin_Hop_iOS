@@ -53,7 +53,9 @@ float floor_position;
 - (void)createSceneContents {
     self.backgroundColor = [SKColor whiteColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
-    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(self.frame.origin.x, floor_position, self.frame.size.width, self.frame.size.height)];
+    
+//    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(self.frame.origin.x, floor_position, self.frame.size.width, self.frame.size.height-floor_position)];
 
     [self initalizingScrollingBackground];
 
