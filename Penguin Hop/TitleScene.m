@@ -27,7 +27,7 @@
 }
 
 - (void)createSceneContents {
-    self.backgroundColor = [SKColor colorWithRed:0.05 green:0.05 blue:0.05 alpha:1.0];
+    self.backgroundColor = [SKColor colorWithRed:0.1 green:0.3 blue:0.6 alpha:1.0];
     self.scaleMode = SKSceneScaleModeAspectFit;
     [self addChild: [self newTitleNode]];
 }
@@ -35,8 +35,8 @@
 - (SKLabelNode *)newTitleNode {
     SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"MarkerFelt-Thin"];
     
-    myLabel.text = @"Title Scene!";
-    myLabel.fontSize = 30;
+    myLabel.text = @"Play";
+    myLabel.fontSize = 60;
     myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                    CGRectGetMidY(self.frame));
     myLabel.name = @"title_node";

@@ -55,6 +55,8 @@ float floor_position;
     self.scaleMode = SKSceneScaleModeAspectFit;
     
     self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(self.frame.origin.x, floor_position, self.frame.size.width, self.frame.size.height-floor_position)];
+    self.physicsWorld.contactDelegate = self;
+//    self.physicsWorld.gravity = CGVectorMake(0.0, 0.0);
 
     [self initalizingScrollingBackground];
 
@@ -130,12 +132,13 @@ float floor_position;
 }
 
 -(void)didTap {
-    if(self.penguin) {
-        [self.penguin runAction:[self.penguin.userData objectForKey:@"jump_action"] completion: ^{
-            [self.penguin didJump];
-            NSLog(@"Jumps: %tu", [self.penguin getJumps]);
-        }];
-    }
+//    if(self.penguin) {
+//        [self.penguin runAction:[self.penguin.userData objectForKey:@"jump_action"] completion: ^{
+//            [self.penguin didJump];
+//        }];
+//    }
+    [self.penguin.physicsBody applyImpulse:CGVectorMake(0.0, 80.0)];
+
 }
 
 -(void)update:(CFTimeInterval)currentTime {

@@ -29,20 +29,22 @@
 //    SKScene *scene = [TitleScene sceneWithSize:skView.bounds.size];
     SKScene *scene = [PenguinScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
+    [skView presentScene:scene];
+
     
     // Present the scene.
     // preload textures- this is temporary as we are doing this in the title scene (but skipping the title scene for testing purposes
-    SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"penguin_run"];
-    SKTexture *p1 = [atlas textureNamed:@"penguin_run1.png"];
-    SKTexture *p2 = [atlas textureNamed:@"penguin_run2.png"];
-    SKTexture *p3 = [atlas textureNamed:@"penguin_run3.png"];
-    NSArray *penguinRunTextures = @[p1,p2,p3];
-    
-    [SKTexture preloadTextures:penguinRunTextures withCompletionHandler:^ {
-        
-        [skView presentScene:scene];
-        
-    }];
+//    SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"penguin_run"];
+//    SKTexture *p1 = [atlas textureNamed:@"penguin_run1.png"];
+//    SKTexture *p2 = [atlas textureNamed:@"penguin_run2.png"];
+//    SKTexture *p3 = [atlas textureNamed:@"penguin_run3.png"];
+//    NSArray *penguinRunTextures = @[p1,p2,p3];
+//    
+//    [SKTexture preloadTextures:penguinRunTextures withCompletionHandler:^ {
+//        
+//        [skView presentScene:scene];
+//        
+//    }];
 }
 
 - (BOOL)prefersStatusBarHidden {

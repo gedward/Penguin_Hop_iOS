@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "PenguinSprite.h"
 
-@interface PenguinScene : SKScene <UIGestureRecognizerDelegate>
+@interface PenguinScene : SKScene <UIGestureRecognizerDelegate, SKPhysicsContactDelegate>
 
 @property BOOL contentCreated;
 @property (retain) PenguinSprite *penguin;

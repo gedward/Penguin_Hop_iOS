@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0428E3E718FCC8DF00C27571 /* penguinbackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0428E3E518FCC8DF00C27571 /* penguinbackground.jpg */; };
+		04A2208218FF573F000A068E /* shark.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A2208118FF573F000A068E /* shark.png */; };
 		04CE630018FBC7A0001F47AD /* TitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CE62FF18FBC7A0001F47AD /* TitleScene.m */; };
 		04D0153F18FCD343003046DA /* penguinjump1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D0153C18FCD343003046DA /* penguinjump1.png */; };
 		04D0154018FCD343003046DA /* penguinbackground2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04D0153D18FCD343003046DA /* penguinbackground2x.jpg */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		0428E3E518FCC8DF00C27571 /* penguinbackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = penguinbackground.jpg; sourceTree = "<group>"; };
+		04A2208118FF573F000A068E /* shark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shark.png; sourceTree = "<group>"; };
 		04CE62FE18FBC7A0001F47AD /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
 		04CE62FF18FBC7A0001F47AD /* TitleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleScene.m; sourceTree = "<group>"; };
 		04D0153C18FCD343003046DA /* penguinjump1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguinjump1.png; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		04DAB7BB18FC57E600E1A902 /* Penguin Images */ = {
 			isa = PBXGroup;
 			children = (
+				04A2208118FF573F000A068E /* shark.png */,
 				0428E3E518FCC8DF00C27571 /* penguinbackground.jpg */,
 				04D0153D18FCD343003046DA /* penguinbackground2x.jpg */,
 				04D0153C18FCD343003046DA /* penguinjump1.png */,
@@ -312,6 +315,7 @@
 				04F0E93918FB927000E6729F /* Spaceship.png in Resources */,
 				04F0E93B18FB927000E6729F /* Images.xcassets in Resources */,
 				04DAB7C218FC580500E1A902 /* penguin_idle.png in Resources */,
+				04A2208218FF573F000A068E /* shark.png in Resources */,
 				04F0E93118FB927000E6729F /* Main_iPad.storyboard in Resources */,
 				04D0154118FCD343003046DA /* penguinjump2.png in Resources */,
 				04D0154018FCD343003046DA /* penguinbackground2x.jpg in Resources */,
